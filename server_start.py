@@ -13,8 +13,8 @@ with open('heroes.json') as heroes_json:
 
 
 def handle_state(past_state, state):
+    # Use nested gets to safely extract data from the state
     global draft_stage
-    print(state)
     if "map" in state.keys():
         if not draft_stage and state["map"]["game_state"] == DOTA_STATE_DRAFTING:
             draft_stage = True
